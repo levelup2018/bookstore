@@ -1,0 +1,14 @@
+{% extends "books/base.html" %}
+
+{% block "title" %}AUTH USER{% endblock %}
+
+{% block "content" %}
+LOGIN:
+<form method="post">
+    {% csrf_token %}
+    <table>
+    {{ form }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

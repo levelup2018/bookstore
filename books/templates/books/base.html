@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block "title" %}{{global_settings.title}}{% endblock %}</title>
+</head>
+<body>
+
+<p>{% if user.is_authenticated %}
+	{{user}} <a href="{% url "logout"%}">Logout</a>
+{% else %}
+	<a href="{% url "login"%}">Login</a>
+{% endif %}</p>
+
+{% include "books/messages.html" %}
+
+{% block "content" %}
+
+{% endblock %}
+
+</body>
+</html>
